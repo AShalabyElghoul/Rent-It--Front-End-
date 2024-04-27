@@ -1,0 +1,124 @@
+<div class="photo">
+  <div class="form-container">
+    <div>
+      <form class="container" [formGroup]="HostingForm"
+        class="custom-form col-xl-6 col-lg-6 col-md-6 col-sm-6 shadow rounded-4 bg-white w-50 m-5">
+        <div class="px-3">
+          <h3 class="Registeration text-body-emphasis fw-bold">Hosting</h3>
+          <hr />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="text" class="form-control" formControlName="Property_Name" placeholder="Property Name"
+            required />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="number" class="form-control" formControlName="Nighly_Price" placeholder="Nighly Price"
+            required />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <textarea class="form-control" formControlName="Description" placeholder="Description" required></textarea>
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="number" class="form-control" formControlName="Nums_Guests" placeholder="Nubmer Of Guests"
+            required />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="number" class="form-control" formControlName="Nums_Beds" placeholder="Number Of Beds" required />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="number" class="form-control" formControlName="Nums_Bathrooms" placeholder="Number Of Bathrooms"
+            required />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="number" class="form-control" formControlName="Nums_Bedrooms" placeholder="Number Of BedRooms"
+            required />
+        </div>
+        <div class="px-3 mt-2">
+          <h5 class="fw-bold">What's your address?</h5>
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <label for="gov">Governorate : </label>
+          <select formControlName="GovernateId" class="form-select" aria-label="Default select example" name="gov">
+            <option *ngFor="let Gover of Governorates" [value]="Gover.id">
+              {{ Gover.name }}
+            </option>
+          </select>
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="text" class="form-control" formControlName="City" placeholder="City" required />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="text" class="form-control" formControlName="District_name" placeholder="District Name"
+            required />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="text" class="form-control" formControlName="Street" placeholder="Street" required />
+        </div>
+
+        <div class="px-3 mt-2 pb-2">
+          <input type="number" class="form-control" formControlName="Building_no" placeholder="Buiding Number"
+            required />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="text" class="form-control" formControlName="Building_name" placeholder="Building Name"
+            required />
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <input type="text" class="form-control" formControlName="Location_url" placeholder="Location URL" required />
+        </div>
+        <div class="px-3 mt-2">
+          <h5 class="fw-bold">What Is The Type Of Property?</h5>
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <label for="PlaceType_ID" class="form-label">What is Your Place Type?</label>
+          <!-- <select formControlName="PlaceType_ID">
+            <option value="" disabled selected>What is Your Place Type?</option>
+            <option *ngFor="let place of placeTypes" [value]="place.id">
+              {{ place.name }}
+            </option>
+          </select> -->
+          <select class="form-select" aria-label="Default select example" formControlName="PlaceType_ID">
+            <option *ngFor="let place of placeTypes" [value]="place.id">
+              {{ place.name }}
+            </option>
+          </select>
+        </div>
+        <div class="px-3 mt-2 pb-2">
+          <label for="PropetyTypeId" class="form-label">What is Your Property Type?</label>
+          <br>
+          <select formControlName="PropetyTypeId" class="form-select" aria-label="Default select example">
+            <option *ngFor="let type of propertyTypes" [value]="type.id">
+              {{ type.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="uploadFiles">
+          <div class="custom-file-upload">
+            <input type="file" id="files" multiple formControlName="imgs" required
+              (change)="OnSelectedImages($event)" />
+            <div class="imgIcon-Button-flex">
+              <div class="icon">
+                <i class="fa-regular fa-image"></i>
+              </div>
+              <label for="files">Upload Images</label>
+            </div>
+          </div>
+          <div>
+            <label for="attrubutesToAddDto" class="form-label">Select Additional Attributes</label>
+            <select formControlName="attrubutesToAddDto" multiple required class="form-select"
+              aria-label="Default select example">
+              <option *ngFor="let attribute of attrubutesToAddDtoOptions" [value]="attribute.id">
+                {{ attribute.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <br />
+        <button type="submit" (click)="submitData()" class="btn btn-primary" style="margin-left: 13px;">
+          Upload Host
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<nav  class="navbar navbar-expand-lg navbar-light bg-light shadow p-3 bg-body rounded">
+  <div class="container-fluid p-2" >
+      <div class="nav-logo d-flex align-items-center">
+          <img src="../../assets/images/blue.png" alt="" style="width: 100px;">
+          <h2  class="px-1 text-primary fs-2">RENT IT</h2>
+      </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  mx-auto mb-2 mb-lg-0 d-flex">
+        <li class="nav-item">
+          <a class="nav-link active px-3 text-primary" aria-current="page" routerLinkActive="test"  routerLink="home">Home</a>
+        </li>
+        <li class="nav-item nav-link px-3">
+          <a class="" routerLinkActive="test" routerLink="Property/Properties">Gallery</a>
+        </li>
+        <li class="nav-item nav-link px-3">
+          <a class="" routerLinkActive="test" routerLink="agent">About</a>
+        </li>
+        <li class="nav-item nav-link px-3">
+          <a class="" routerLinkActive="test" href="#footer">Contacts</a>
+        </li>
+        <li class="nav-item nav-link px-3">
+          <a *ngIf="navBarisLoggedIn" class="" routerLinkActive="test" routerLink="/User/Hosting">Host you property</a>
+        </li>
+
+      </ul>
+
+      <form class="d-flex search-login">
+        <i routerLink="User/Datails" style="cursor: pointer;" class="profile fa-duotone fa-user"></i>
+
+        <fa-icon *ngIf="navBarisLoggedIn"  routerLink="User/Details" [icon]="faUser" class="fa-bell mx-4"></fa-icon>
+
+    
+
+        <button *ngIf="!navBarisLoggedIn"  class="btn btn-primary h-25 mx-2 " type="submit" routerLink="/login" (click)="toggleNavbar">   Login</button>
+        <button *ngIf="!navBarisLoggedIn" class="btn btn-primary h-25 mx-2 " type="submit" routerLink="/regestration"> Register</button>
+
+
+        <button *ngIf="navBarisLoggedIn" class="btn btn-primary h-25  " type="submit"(click)="handleLogout($event)"  > Log out  </button>
+
+      </form>
+    </div>
+  </div>
+</nav>
+

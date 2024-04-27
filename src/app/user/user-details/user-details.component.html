@@ -1,0 +1,274 @@
+<!-- <pre>{{ user | json }}</pre> -->
+<div class="container">
+  <div id="user-info" class="row my-4">
+    <div class="leftside col-md-4 card me-4">
+      <div id="Userimg" class="imgwrapper">
+        <img
+          src="../../../assets/User Images/{{ user?.image_URL }}"
+          alt="userimg"
+        />
+      </div>
+
+      <!-- ---------------------------- -->
+      <div
+        class="modal fade"
+        id="exampleModalCenter"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <label class="custom-file-upload">
+        <input type="file"/>
+    </label> -->
+
+      <h3 id="ClientName">{{ user?.name }}</h3>
+    </div>
+
+    <div class="rightside col-md-7 card py-4">
+      <div id="UserInfo" class="row d-flex">
+        <div id="userinformation" class="card-body col-md-3">
+          <h5>First Name</h5>
+          <h5 class="card-text">{{ user?.fname }}</h5>
+          <br />
+          <h5>Last Name</h5>
+          <h5 class="card-text">{{ user?.lname }}</h5>
+          <br />
+          <h5>Email</h5>
+          <h5 class="card-text">{{ user?.email }}</h5>
+          <br />
+          <h5>Joined Date</h5>
+          <h5 class="card-text">{{ user?.joinedDate | date : "longDate" }}</h5>
+          <br />
+        </div>
+        <ng-container *ngIf="user?.userProperties?.length != 0">
+          <div id="user-properties" class="card me-4 col-md-6">
+            <h6>My properties</h6>
+            <div
+              class="card mb-3"
+              *ngFor="let property of user?.userProperties"
+            >
+              <div class="d-flex">
+                <div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{ property.property_Name }}</h5>
+                    <p class="card-text">
+                      {{ property?.location?.district_name }},{{
+                        property.location.street
+                      }}
+                    </p>
+                    <p class="card-text">{{ property.location.city }}</p>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >Number of visitors :{{
+                          property.nums_Web_visitors
+                        }}</small
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div *ngFor="let img of property.images">
+                  <ng-container *ngIf="img.img_order == 1">
+                    <div id="propertyimg" class="imgwrapper card">
+                      <img
+                        src="../../../assets/Property Images/{{ img.img_URL }}"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <!-- User requests  -->
+  <div
+    id="UserRequests"
+    class="row row-cols-1 row-cols-md-3 g-4 container"
+    style="margin-bottom: 20px"
+  >
+    <!-- My propertied Request rent  -->
+    <div id="MyPropertiesRequesrs" class="card col">
+      <h4 style="text-align: center">My properties rent requests</h4>
+      <div *ngIf="UserRequestRentForMyProperty.length == 0">
+        <div id="NotRentPropertied" class="card-body">
+          <p class="card-text">There is no requests for your properties</p>
+        </div>
+      </div>
+      <div class="card mb-3" *ngFor="let rent of UserRequestRentForMyProperty">
+        <div class="d-flex">
+          <div>
+            <div class="card-body" style="height: 280px">
+              <h5 class="card-title">{{ rent.propertyName }}</h5>
+              <div class="d-flex">
+                <div>
+                  <p>
+                    {{ rent.checkInDate | date : "mediumDate" }} -
+                    {{ rent.checkOutDate | date : "mediumDate" }}<br />
+                    Nightly price = {{ rent.nightly_price }}<br />
+                    Service fees = {{ rent.service_Fees }}<br />
+                    Total = {{ rent.total_price }}<br />
+                    {{ rent.userName }} wish to rent your property for
+                    {{ rent.duration }} days.
+                  </p>
+                  <button
+                    (click)="AcceptHandler(rent.id, $event)"
+                    class="btn btn-primary mx-2"
+                  >
+                    Accept
+                  </button>
+                  <button
+                    (click)="RejectHandler(rent.id, $event)"
+                    class="btn btn-danger"
+                  >
+                    Reject
+                  </button>
+                </div>
+                <div
+                  id="rentprop"
+                  class="imgwrapper card"
+                  style="height: 100px; width: 280px; overflow: hidden"
+                >
+                  <img
+                    src="../../../assets/Property Images/{{
+                      rent.property_img
+                    }}"
+                    class="img-fluid rounded-start"
+                    alt="..."
+                    style="width: 100%; height: 100%"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- My rent requests  -->
+
+    <div id="RentRequests" class="col card">
+      <h4 style="text-align: center">My rent requests</h4>
+
+      <div class="card mb-3" *ngFor="let rent of UserRentRequests">
+        <div class="d-flex">
+          <div>
+            <div class="card-body" style="height: 280px">
+              <h5 class="card-title">{{ rent.propertyName }}</h5>
+              <div>
+                <p>{{ rent.message }}</p>
+                <div class="d-flex">
+                  <p>
+                    {{ rent.checkInDate | date : "mediumDate" }} -
+                    {{ rent.checkOutDate | date : "mediumDate" }}<br />
+                    Nightly price = {{ rent.nightly_price }}<br />
+                    Service fees = {{ rent.service_Fees }}<br />
+                    Total = {{ rent.total_price }}<br />
+                  </p>
+                  <div
+                    id="rentprop"
+                    class="imgwrapper card"
+                    style="height: 100px; width: 200px; overflow: hidden"
+                  >
+                    <img
+                      src="../../../assets/Property Images/{{
+                        rent.property_img
+                      }}"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                      style="width: 100%; height: 100%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- My Host requests  -->
+
+    <div id="HostRequests" class="col card">
+      <h4 style="text-align: center">My Host requests</h4>
+      <div class="card mb-3" *ngFor="let host of UserRequestsHost">
+        <div class="d-flex">
+          <div>
+            <div class="card-body" style="height: 280px">
+              <h5 class="card-title">{{ host.property_Name }}</h5>
+              <div>
+                <p>{{ host.message }}</p>
+                <div class="d-flex">
+                  <p>
+                    {{ host.building_no }},{{ host.street }},{{
+                      host.district_name
+                    }}<br />
+                    {{ host.city }}{{ host.governate }}<br />
+                    Nightly price = {{ host.nighly_Price }}
+                  </p>
+                  <div *ngFor="let img of host.imageToAddRequestHostDtos">
+                    <ng-container *ngIf="img.img_order == 1">
+                      <div
+                        id="Hostprop"
+                        class="imgwrapper card"
+                        style="
+                          height: 100px;
+                          width: 200px;
+                          overflow: hidden;
+                          margin-left: 20px;
+                        "
+                      >
+                        <img
+                          src="../../../assets/Property Images/{{
+                            img.img_URL
+                          }}"
+                          class="img-fluid rounded-start"
+                          alt="..."
+                          style="width: 100%; height: 100%"
+                        />
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+                <p>{{ host.property_Type }} {{ host.place_Type }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

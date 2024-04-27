@@ -1,0 +1,45 @@
+.clr {
+    clear: both;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+
+.nav-item a {
+    list-style: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: grey;
+}
+
+.nav-item a:hover {
+    color: #2289FF;
+}
+
+.nav-item a {
+    text-decoration: none;
+}
+
+.search-login input {
+    border: grey 2px dashed;
+    border-radius: 10px;
+    width: 190px;
+}
+
+.fa-bell {
+    background-color: #E6ECF4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-control{
+margin-left: 120px;
+}
+

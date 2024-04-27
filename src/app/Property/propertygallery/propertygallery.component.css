@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  
+  
+  .navbar-item {
+    color: #20507e;
+    font-weight: bolder;
+  }
+  li:hover{
+  color: #0D6EFD;
+  cursor: pointer;
+  transition: 0.3s;
+  }
+  .navv{
+    border-radius: 100px;
+  }
+  
+  .card {
+    transition: all 0.5s;
+    cursor: pointer;
+    height: 420px;
+  }
+  
+  
+  
+  
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+  }

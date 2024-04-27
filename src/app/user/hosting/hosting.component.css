@@ -1,0 +1,70 @@
+.photo{
+  background-image: url('../../../assets/images/042bdea7-ffb3-4f6c-8346-0c9af0581a0b.webp');
+  background-position: center;
+  background-size: cover; 
+}
+.custom-form {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background-color:#0056b3;
+    border-color:cadetblue;
+  }
+  
+  .btn-primary:hover {
+    background-color:dodgerblue;
+    border-color:steelblue;
+  }
+  
+  .custom-file-upload input[type="file"] {
+    display: none;
+  }
+  
+  .custom-file-upload label {
+    background-color:#138496;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .custom-file-upload label:hover {
+    background-color: #0056b3;
+  }
+  
+  .custom-file-upload .icon {
+    margin: 10px 30px;
+    font-size:60px;
+    color: #0056b3;
+  }
+.uploadFiles{
+    display: flex;
+    justify-content:space-between;
+    text-align: center;
+    margin-left: 15px;
+}
+
+  .form-container {
+    background-image: url('../../../assets/images/VRSloganHero.webp'); 
+    background-size: cover;
+    background-position: center center; 
+    padding: 50px 0; 
+    background-color: white
+  }
+  
+  .container {
+    background-color: rgba(255, 255, 255, 0.8);  
+    padding: 20px;  
+    border-radius: 10px;  
+  }
+  
+  

@@ -1,0 +1,91 @@
+<p>gallery works</p>
+<nav class="container m-auto bg-white p-3 navv">
+    <ul class="d-flex justify-content-between align-items-center">
+      <li (click)="filterPropertyByType('all')" class="navbar-item">All</li>
+      <li (click)="filterPropertyByType('villa')" class="navbar-item">Villa</li>
+      <li (click)="filterPropertyByType('chalet')" class="navbar-item">Chalet</li>
+      <li (click)="filterPropertyByType('condo')" class="navbar-item">Condo</li>
+      <li (click)="filterPropertyByType('private room')" class="navbar-item">
+        Private Room
+      </li>
+      <li (click)="filterPropertyByType('shared room')" class="navbar-item">
+        Shared Room
+      </li>
+      <li (click)="filterPropertyByType('entire house')" class="navbar-item">
+        Entire House
+      </li>
+      <li (click)="filterPropertyByType('townhouse')" class="navbar-item">
+        Townhouse
+      </li>
+      <li (click)="filterPropertyByType('cabin')" class="navbar-item">Cabin</li>
+      <li (click)="filterPropertyByType('bungalow')" class="navbar-item">
+        Bungalow
+      </li>
+    </ul>
+  </nav>
+  <section class="cards-">
+    <div class="text-center">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div
+          class="card col-lg-3 col-md-6 col-12 py-3 px-2 m-3"
+          style="width: 18rem"
+          *ngFor="let n of filteredProperties"
+        >
+          <!-- <img *ngFor="let i of n.image"  [src]="i.img_URL" class="card-img-top w-100" alt=""> -->
+          <img
+            routerLinkActive="test"
+            routerLink="/Property/Details/{{ n.id }}"
+            src="../../../assets/Property Images/{{n.image}}"
+            class="card-img-top"
+            alt=""
+          />
+  
+          <a
+            class="rent bg-primary bg-gradient position-absolute top-0 end-0 text-light m-2 text-decoration-none"
+            >{{ n.state }}</a
+          >
+  
+          <div class="card-body">
+            <h2 class="text-secondary fw-bold fs-6 p-1 text-decoration-none">
+              {{ n.property_Name }}
+            </h2>
+            <h4 class="cost text-primary">{{ n.nighly_Price }}</h4>
+            <h5 class="card-title">{{ n.districtName }}-{{ n.governate }}</h5>
+            <p class="card-text text-secondary text-start">{{ n.description }}</p>
+            <div
+              class="card-bottom d-flex justify-content-around bg-secondary-subtle rounded"
+            >
+              <div class="bedroom">
+                <div class="bed d-flex grid gap-1">
+                  <a href="#" class="text-primary text-decoration-none">{{
+                    n.nums_Bedrooms
+                  }}</a>
+                  <i class="bi bi-truck-flatbed"></i>
+                </div>
+                <div class="fs-6 text text-secondary">Beedrooms</div>
+              </div>
+              <div class="bathroom">
+                <div class="bath d-flex grid gap-1">
+                  <a href="#" class="text-primary text-decoration-none">{{
+                    n.nums_Bathrooms
+                  }}</a>
+                  <i class="bi bi-droplet"></i>
+                </div>
+                <div class="fs-6 text text-secondary">Bathrooms</div>
+              </div>
+              <div class="squre">
+                <div class="squre d-flex grid gap-1">
+                  <a href="#" class="text-primary text-decoration-none">{{
+                    n.nums_Beds
+                  }}</a>
+                  <i class="bi bi-qr-code-scan"></i>
+                </div>
+                <div class="fs-6 text text-secondary">Beds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

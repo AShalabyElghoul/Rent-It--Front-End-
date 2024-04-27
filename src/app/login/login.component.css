@@ -1,0 +1,83 @@
+.photo{
+    background-image: url(../../assets/images/VRSloganHero.webp);
+    background-position: center center;
+    background-size: cover;  
+}
+.Firstname{
+    width: 50%;
+}
+.LastName{
+    width: 49%;
+}
+.inputs{
+    width: 30%;
+    height: 43px;
+    padding: 0.5rem 0.7rem;
+    transition: border-color 0.15s , box-shadow 0.15s;
+}
+.inputs:focus{
+    border-color: #7db0fb;
+    outline: 0;
+    box-shadow:  0 0 0 4px rgba(24 , 117 , 255 , 0.25);
+}
+._inputs{
+    width: 69%;
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.7rem;
+    transition: border-color 0.15s , box-shadow 0.15s;
+}
+._inputs:focus{
+    border-color: #7db0fb;
+    outline: 0;
+    box-shadow:  0 0 0 4px rgba(24 , 117 , 255 , 0.25);
+}
+hr{
+    width: 40px;
+    font-size:larger; 
+    color: rgb(20, 6, 66);
+    font-weight: bolder;
+}
+
+@keyframes firstAnimation{
+    0%{left: 0;}
+    100%{left: 20px;}
+}
+.p{
+    transition: transform 5s;
+    animation-name: secondAnimation;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position:relative;
+}
+@keyframes secondAnimation{
+    0%{top: 0;}
+    100%{top: 10px;}
+}
+
+#forget{
+ cursor: pointer;
+ margin-left: auto;
+ text-decoration: none;
+ min-width: 100px;
+}
+
+.form-inline label{
+  padding-left: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+.bordert{
+    border-top: 1px solid #aaa;
+    position: relative;
+}
+
+.bordert:after{
+    content: "or connect with";
+    position: absolute;
+    text-decoration: center;
+    top: -13px;
+    left: 50%; /* Set left position to center horizontally */
+    transform: translateX(-50%); /* Move the element back by half of its own width */
+    background-color: #fff;
+}

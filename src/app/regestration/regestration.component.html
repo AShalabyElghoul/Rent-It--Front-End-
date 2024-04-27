@@ -1,0 +1,178 @@
+<!-- Start Part One  -->
+<div class="photo">
+    <div class="container p-5 ">
+        <div class="row ">
+    
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class=" pt-4 mt-5 ">
+                    <h1 class="p  fw-bold"> Live in your dream <br> destination <br> with Vrbo</h1>
+                    <p class="p2 text-light fs-6 fw-bold pt-3 icon-link-hover">Trusted for more than 20 years, Vrbo <br> helps hosts like you make extra income<br>and welcome wonderful guests. Start<br>your story with us today</p>
+                </div>
+            </div>
+            
+         <form class="col-xl-6 col-lg-6 col-md-6 col-sm-6 shadow rounded-4 bg-white w-50 " [formGroup]="RegisterForm">
+            
+            <div class="px-3 mt-2">
+                <h3 class="Registeration text-body-emphasis fw-bold"> Registeration </h3>
+                <hr>
+            </div>
+    
+            <div class="px-3 mt-2 pb-2">
+                <input  placeholder="First Name" type="text"    class=" form-control w-100 p-2"  formControlName="FName">                
+            </div>
+            <small *ngIf="RegisterForm.controls['FName'].dirty && RegisterForm.controls['FName'].hasError('required')" class="text-danger px-3 mt-2 pb-2">*FirstName is required</small>
+
+            <div class="px-3 mt-2 pb-2">
+                <input  placeholder="Last Name"  type="text"    class=" form-control w-100 p-2"  formControlName="LName">                
+            </div>
+            <small *ngIf="RegisterForm.controls['LName'].dirty && RegisterForm.controls['LName'].hasError('required')" class="text-danger px-3 mt-2 pb-2">*LastName is required</small>
+
+
+            <div class="px-3 mt-2 pb-2">
+                <input  placeholder="User Name"  type="text"    class=" form-control w-100 p-2"  formControlName="UserName" >                
+            </div>
+            <small *ngIf="RegisterForm.controls['UserName'].dirty && RegisterForm.controls['UserName'].hasError('required')" class="text-danger px-3 mt-2 pb-2">*UserName is required</small>
+
+             <div class="px-3 mt-2 pb-2">
+                <input  placeholder="Email"     type="email"    class=" form-control w-100 p-2"  formControlName="Email" >                
+            </div>
+            <small *ngIf="RegisterForm.controls['Email'].dirty && RegisterForm.controls['Email'].hasError('required')" class="text-danger px-3 mt-2 pb-2">*Email is required</small>
+
+    
+            <div class="px-3 mt-2 pb-2">
+                <input  placeholder="Password"  type="password" class="form-control w-100 p-2"   formControlName="Password">                
+            </div>      
+            <small *ngIf="RegisterForm.controls['Password'].dirty && RegisterForm.controls['Password'].hasError('required')" class="text-danger px-3 mt-2 pb-2">*Password is required</small>
+  
+    
+    
+            <div class="hstack gap-3 px-5 mt-3 d-flex justify-content-center pb-4" >
+                <button type="submit" class="btn btn-primary d-flex justify-content-center align-items-center w-75 rounded-5 icon-link-hover" (click)="onRegister()" [disabled]="RegisterForm.invalid"> Register </button>
+            </div>
+            <div class="text-muted fr px-4 pb-2 mb-3">
+                Already have account? <a id="forget" routerLink="/login"> Login </a>
+            </div>
+            
+         </form>
+                      
+            </div>
+        </div> 
+    </div>
+    <!-- End Part One -->
+    
+    
+    <!-- Start part Portfolio -->
+    <div class="text-center mt-5">  
+        <h4 class="mt-3 fs-bold"> Bring the right guests within reach </h4>
+        <p> Connect with millions of people whose purpose, taste and budget make your property the perfect <br> place to stay.</p>
+    </div>
+    <!-- Start part Portfolio -->
+    
+    
+    <!-- Start Section 2 -->
+    <div class="container mt-5 mb-5"> 
+        <div class="row">
+    
+            
+            <div class="col ">
+                <div class="p-4 ">
+                    <div class="icon-container  d-flex justify-content-center align-items-center">
+                        <img class="w-25 pb-5" src="../../assets/images/VR-icon-world-travelers.png">
+                    </div>
+                    <div class="text-center pb-2">
+                        <h5> Access a world of travelers</h5>
+                    </div>
+                    <div class="text-center">
+                        <p>From long-range planners to last-minute bookers, bring travelers to your door from around the world.</p>
+                    </div>
+                </div>    
+            </div>
+    
+            <div class="col ">
+                <div class="p-4 ">
+                    <div class="icon-container  d-flex justify-content-center align-items-center">
+                        <img class="w-25 pb-5" src="../../assets/images/VR-icon-ideal-guests.png">
+                    </div>
+                    <div class="text-center pb-2">
+                        <h5> Attract your ideal guests</h5>
+                    </div>
+                    <div class="text-center">
+                        <p>Book your ideal guests—travelers who delight in what you provide and want to return again and again.</p>
+                    </div>
+                </div>    
+            </div>
+    
+    
+            <div class="col ">
+                <div class="p-4 ">
+                    <div class="icon-container  d-flex justify-content-center align-items-center">
+                        <img class="w-25 pb-5" src="../../assets/images/VR-icons-grow-business.png">
+                    </div>
+                    <div class="text-center pb-2">
+                        <h5> Grow your business </h5>
+                    </div>
+                    <div class="text-center">
+                        <p>Make decisions based on real-time data, be more competitive & help increase visibility and bookings.</p>
+                    </div>
+                </div>    
+            </div>
+    
+    
+        </div>
+    </div>
+    <!-- End Section 2 -->
+    
+    
+    <!-- Start part Paragrah -->
+    <div class="text-center mt-5">  
+        <h4 class="fw-bold">Vrbo is a member of the Expedia Group marketplace of travel brands</h4>
+    </div>
+    <!-- Start part Paragrah -->
+    
+    
+    <!-- Start Section 5 -->
+    <div class="container p-3 ">
+        <div class="row">
+    
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center align-items-center">
+                <div class="member w-50 ">
+                    <img src="../../assets/images/ebookers logo.svg" class="w-100">
+             </div>
+            </div>
+    
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center align-items-center">
+                <div class="member w-50">
+                    <img src="../../assets/images/CheapTickets logo.svg" class="w-100">
+             </div>
+            </div>
+    
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center align-items-center">
+                <div class="member w-50 ">
+                    <img src="../../assets/images/Expedia logo.svg" class="w-100">
+             </div>
+            </div>
+    
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center align-items-center">
+                <div class="member w-50  ">
+                    <img src="../../assets/images/orbitz logo.svg" class="w-100">
+             </div>
+            </div>
+    
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center align-items-center">
+                <div class="member w-50">
+                    <img src="../../assets/images/H.com logo.svg" class="w-100">
+             </div>
+            </div>
+    
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center align-items-center">
+                <div class="member w-50 ">
+                    <img src="../../assets/images/Vrbo Product Logo Full Colour Dark Blue.svg" class="w-100">
+             </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- End Section 5 -->
+
+
+

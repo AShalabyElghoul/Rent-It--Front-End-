@@ -1,0 +1,432 @@
+<section id="property-galley" class="pt-4 pb-4">
+  <!-- <pre>{{ propertyById | json }}</pre> -->
+
+  <div class="container">
+    <div id="property-galley">
+      <div class="container">
+        <div class="row g-2" >
+          <div class="col-md-6" >
+            <div *ngFor="let i of propertyById.images" >
+              <div style="height: 425px; width: 633px; overflow: hidden" *ngIf="i.img_order==1">
+                <img
+                  src="../../../assets/Property Images/{{ i.img_URL }}"
+                  class="w-100 h-100 rounded-start"
+                  alt=""
+                />
+              </div>
+          </div>
+            
+          </div>
+
+          <div class="col-md-6">
+            <div class="row g-2 mb-2">
+              <div class="col-md-6" >
+                <ng-container *ngFor="let i of propertyById.images" >
+                <div style="width: 312px; overflow: hidden" *ngIf="i.img_order == 2">
+                    <img
+                      src="../../../assets/Property Images/{{ i.img_URL }}"
+                      alt=""
+                      class="w-100 h-100"
+                    />
+                </div>
+              </ng-container>
+
+              </div>
+              <div class="col-md-6" >
+                <ng-container *ngFor="let i of propertyById.images" >
+
+                <div style="width: 312px; overflow: hidden" *ngIf="i.img_order == 3">
+                    <img
+                      src="../../../assets/Property Images/{{ i.img_URL }}"
+                      alt=""
+                      class="w-100 h-100"
+                    />
+                </div>
+              </ng-container>
+
+              </div>
+            </div>
+            <div class="row g-2">
+              <div class="col-md-6" >
+                <ng-container *ngFor="let i of propertyById.images" >
+
+                <div style="width: 312px; overflow: hidden" *ngIf="i.img_order == 4">
+                    <img
+                      src="../../../assets/Property Images/{{ i.img_URL }}"
+                      alt=""
+                      class="w-100 h-100"
+                    />
+                </div>
+              </ng-container>
+
+              </div>
+              <div class="col-md-6" >
+                <ng-container *ngFor="let i of propertyById.images" >
+
+                <div style="width: 312px; overflow: hidden" *ngIf="i.img_order == 5">
+                    <img
+                      src="../../../assets/Property Images/{{ i.img_URL }}"
+                      alt=""
+                      class="w-100 h-100"
+                    />
+                </div>
+              </ng-container>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-md-6">
+          <img
+          *ngFor="let i of n.images" [src]="i.img_URL"
+            src="../../../assets/images/property-img/photo 1.jpg"
+            class="w-100 h-100 rounded-start"
+            alt="" />
+            
+        </div> -->
+    <!-------------------------------------------- end of Gallery area ------------------------------------------->
+    <section id="infos">
+      <div class="container row" id="property_info">
+        <div class="container col-md-8">
+          <div id="brief" class="py-4">
+            <div class="d-flex">
+              <h4>{{ propertyById.property_Name }}</h4>
+              <button
+                type="button"
+                class="btn btn-primary"
+                style="margin-left: 50px"
+                data-bs-toggle="modal"
+                data-bs-target="#RentFormID"
+              >
+                Check Availability
+              </button>
+            </div>
+            <h6 class="pb-3">
+              {{ propertyById.nums_Guests }} guests -
+              {{ propertyById.nums_Bedrooms }} bedrooms -
+              {{ propertyById.nums_Beds }} beds -
+              {{ propertyById.nums_Bathrooms }} baths
+            </h6>
+          </div>
+          <!------------------- start of host ---------------------->
+          <div id="host">
+            <div class="host-det d-flex mb-3">
+              <div class="imgwrap rounded-circle overflow-hidden">
+                <img
+                  src="{{ propertyById.host_image }}"
+                  style="width: 70px; height: 70px"
+                />
+              </div>
+              <div class="px-3">
+                <h5>{{ propertyById.hostName }}</h5>
+                <p>Joined in September 2016</p>
+              </div>
+            </div>
+            <p>Friendly, helpful and easy going host :)</p>
+            <h6>{{ propertyById.hostName }} is a Superhost</h6>
+            <p class="pb-3">
+              Superhosts are experienced, highly rated hosts who are committed
+              to providing great stays for guests.
+            </p>
+          </div>
+          <!------------------- End of host ---------------------->
+          <!------------------- start of description ---------------------->
+          <div id="description" class="py-4">
+            <h4 class="pb-2">Description</h4>
+            <p class="pb-3">
+              {{ propertyById.description }}
+            </p>
+          </div>
+          <!------------------- End of description ---------------------->
+          <!------------------- start of amneties ---------------------->
+          <div id="amneties" class="py-4">
+            <h4 class="pb-2">Amenities</h4>
+
+            <div class="row d-flex align-items-center">
+              <div
+                class="col-lg-3 col-md-6 col-12"
+                *ngFor="let item of propertyById.attributes; let i = index"
+              >
+                <i class="bi bi-wifi me-3"></i>
+                <p>{{ item.name }}</p>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-md-6 d-flex">
+                <i class="bi bi-snow me-3"></i>
+                <p>AC</p>
+              </div>
+              <div class="col-md-6 d-flex">
+                <i class="bi bi-car-front-fill me-3"></i>
+                <p>Car parking</p>
+              </div>
+            </div> -->
+            <!-- <div class="row">
+              <div class="col-md-6 d-flex">
+                <i class="bi bi-water me-3"></i>
+                <p>Water front</p>
+              </div>
+              <div class="col-md-6 d-flex">
+                <i class="bi bi-badge-wc me-3"></i>
+                <p>WIFI</p>
+              </div>
+            </div> -->
+            <!-- <div class="row">
+              <div class="col-md-6 d-flex">
+                <i class="bi bi-wifi me-3"></i>
+                <p>WIFI</p>
+              </div>
+              <div class="col-md-6 d-flex">
+                <i class="bi bi-wifi me-3"></i>
+                <p>Washer</p>
+              </div>
+            </div> -->
+            <!-- <div class="row pb-3">
+              <div class="col-md-6 d-flex">
+                <i class="bi bi-cake me-3"></i>
+                <p>Kitchen</p>
+              </div>
+              <div class="col-md-6 d-flex">
+                <i class="bi bi-wifi me-3"></i>
+                <p>WIFI</p>
+              </div>
+            </div> -->
+          </div>
+
+          <!------------------- end of amenetirs ---------------------->
+
+          <!------------------- start of rules ---------------------->
+          <div id="Policies" class="py-4">
+            <h4 class="pb-2">House rules</h4>
+            <div class="d-flex justify-content-between pb-3">
+              <div class="mx-4">
+                <h5>House rules</h5>
+                <p>Check-in after 3:00 PM</p>
+                <p>Checkout before 12:00 PM</p>
+                <p>5 guests maximum</p>
+              </div>
+              <div class="mx-4 ms-4">
+                <h5>Safety&property</h5>
+                <p>Smoke alarm not reported</p>
+                <p>Carbon monoxide alarm</p>
+              </div>
+              <div class="ms-4">
+                <h5>Cancellation policy</h5>
+                <p>
+                  Review the Host’s full cancellation policy <br />
+                  which applies even if you cancel for illness or disruptions
+                  caused by COVID-19.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!------------------- end of rules ---------------------->
+
+          <!------------------- start of location ---------------------->
+          <div id="Location" class="py-4">
+            <h4 class="pb-2">Location</h4>
+            <p>
+              {{ propertyById.location.city }},
+              {{ propertyById.location.street }},
+              {{ propertyById.location.building_no }},
+              {{ propertyById.location.building_name }},
+              {{ propertyById.location.district_name }} ,
+              {{ propertyById.location.governate }}
+            </p>
+            <div class="text-center pb-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.6492153200147!2d29.914124127005856!3d31.2027382362025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c38f39fdcf4b%3A0xc479fbdffad87811!2sAl%20Shalalat%20Park!5e0!3m2!1sen!2seg!4v1712416592051!5m2!1sen!2seg"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <!------------------- end of location ---------------------->
+
+          <!------------------- start of reviews ---------------------->
+          <ng-container *ngIf="propertyById.userReviews.length != 0">
+            <div id="Reviews" class="py-4">
+              <h4 class="pb-3">Reviews :</h4>
+              <div class="row d-flex align-items-center justify-content-center">
+                <div
+                  class="card col-lg-5 col-md-6 col-12 py-3 px-2 m-3"
+                  *ngFor="let r of propertyById.userReviews"
+                >
+                  <div class="h-100">
+                    <div class="card-body">
+                      <div class="user-rev d-flex mb-3">
+                        <div class="imgwrap rounded-circle overflow-hidden">
+                          <img
+                          
+                            src="../../../assets/User Images/{{r.img_Url}}"
+                            style="width: 70px; height: 70px"
+                          />
+                        </div>
+                        <div class="px-3">
+                          <h5>{{ r.client_Name }}</h5>
+                        </div>
+                      </div>
+                      <p>"{{ r.review }} "</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Add Review
+          </button>
+
+          <!-- Modal -->
+          <form [formGroup]="AddReview">
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Add Review
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <input type="text" formControlName="Review" />
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      (click)="HandleReview(propertyById.id, $event)"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!------------------- end of location ---------------------->
+
+          <!------------------- start of reviews ---------------------->
+        </div>
+      </div>
+    </section>
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <form [formGroup]="RentingForm">
+      <div
+        class="modal fade"
+        id="RentFormID"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                {{ propertyById.nighly_Price }}$
+                <span class="night">Night</span>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="conatiner">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="floatingInputGrid"
+                        formControlName="Checkin_date"
+                      />
+                      <label for="floatingInputGrid">CHEK-IN</label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="floatingInputGrid"
+                        formControlName="Checkout_date"
+                      />
+                      <label for="floatingInputGrid">CHEK-OUT</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <div class="form-floating">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="floatingInputGrid"
+                    formControlName="NumOfGuests"
+                    placeholder="Number of Guests"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                (click)="RentProperty(propertyById.id, $event)"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

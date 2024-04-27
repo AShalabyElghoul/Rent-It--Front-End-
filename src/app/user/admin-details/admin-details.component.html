@@ -1,0 +1,190 @@
+<p>admin-details works!</p>
+<div class="container">
+  <div id="user-info" class="row my-4">
+    <div class="leftside col-md-4 card me-4">
+      <div id="Userimg" class="imgwrapper">
+        <img
+          src="../../../assets/User Images/{{ Admin?.image_URL }}"
+          alt="userimg"
+        />
+      </div>
+      
+            <h3 id="ClientName">{{ Admin?.name }}</h3>
+    </div>
+
+    <div class="rightside col-md-7 card py-4">
+      <div id="UserInfo" class="row d-flex">
+        <div class="card-body col-md-3">
+          <h5>First Name</h5>
+          <h5>{{ Admin?.fname }}</h5>
+          <br />
+          <h5>Last Name</h5>
+          <h5>{{ Admin?.lname }}</h5>
+          <br />
+          <h5>Email</h5>
+          <h5>{{ Admin?.email }}</h5>
+          <br />
+          <h5>Joined Date</h5>
+          <h5>{{ Admin?.joinedDate | date : "longDate" }}</h5>
+          <br />
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <div id="user-details" class="row g-4" style="margin-bottom: 20px;">
+    <div
+      id="MyPropertiesRequesrs"
+      class="card col"
+      style="height: 400px; overflow-y: auto"
+    >
+      <h4 style="text-align: center">Requests for hosting</h4>
+      <div class="card mb-3" *ngFor="let host of AllrequestsHost">
+        <div class="d-flex">
+          <div class="card-body" style="height: 280px">
+            <h5 class="card-title">{{ host.property_Name }}</h5>
+            <div class="d-flex">
+              <div style="width: 75%">
+                <p>
+                  {{ host.street }},{{ host.district_name }}<br />
+                  {{ host.governate }}<br />
+                  {{ host.description }}<br />
+                  {{ host.place_Type }} {{ host.property_Name }}<br />
+                  Nightly price = {{ host.nighly_Price }}<br />
+                  No.of beds:{{ host.nums_Beds }}, No.of guests:{{
+                    host.nums_Guests
+                  }}
+                </p>
+                <button
+                  (click)="AccepHosttHandler(host.id, $event)"
+                  class="btn btn-primary mx-2"
+                >
+                  Accept
+                </button>
+                <button
+                  (click)="RejectHostHandler(host.id, $event)"
+                  class="btn btn-danger"
+                >
+                  Reject
+                </button>
+              </div>
+              <div
+                style="width: 30%"
+                *ngFor="let img of host.imageToAddRequestHostDtos"
+              >
+                <ng-container *ngIf="img.img_order == 1">
+                  <div
+                    id="rentprop"
+                    class="imgwrapper card"
+                    style="height: 150px; width: 280px; overflow: hidden"
+                  >
+                    <img
+                      src="../../../assets/Property Images/{{ img.img_URL }}"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                      style="width: 100%; height: 100%"
+                    />
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="MyPropertiesRequesrs"
+      class="card col"
+      style="height: 400px; overflow-y: auto"
+    >
+      <h4 style="text-align: center">Request Rent</h4>
+      <div class="card mb-3" *ngFor="let rent of AllRequestRent">
+        <ng-container *ngIf="rent.hostStateID == 2">
+          <div class="d-flex">
+            <div>
+              <div class="card-body" style="height: 280px">
+                <h5 class="card-title">{{ rent.propertyName }}</h5>
+                <div class="d-flex">
+                  <div>
+                    <p>
+                      {{ rent.checkInDate | date : "mediumDate" }} -
+                      {{ rent.checkOutDate | date : "mediumDate" }}<br />
+                      Nightly price = {{ rent.nightly_price }}<br />
+                      Service fees = {{ rent.service_Fees }}<br />
+                      Total = {{ rent.total_price }}<br />
+                      {{ rent.userName }} wish to rent this property from
+                      {{ rent.hostName }} for {{ rent.duration }} days.
+                    </p>
+                    <button
+                      (click)="AcceptRentHandler(rent.id, $event)"
+                      class="btn btn-primary mx-2"
+                    >
+                      Accept
+                    </button>
+                    <button
+                      (click)="RejectRentHandler(rent.id, $event)"
+                      class="btn btn-danger"
+                    >
+                      Reject
+                    </button>
+                  </div>
+                  <div
+                    id="rentprop"
+                    class="imgwrapper card"
+                    style="height: 150px; width: 280px; overflow: hidden"
+                  >
+                    <img
+                      src="../../../assets/Property Images/{{
+                        rent.property_img
+                      }}"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                      style="width: 100%; height: 100%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="rent.hostStateID == 1">
+          <div class="d-flex">
+            <div>
+              <div class="card-body" style="height: 280px">
+                <h5 class="card-title">{{ rent.propertyName }}</h5>
+                <div class="d-flex">
+                  <div>
+                    <p>
+                      {{ rent.checkInDate | date : "mediumDate" }} -
+                      {{ rent.checkOutDate | date : "mediumDate" }}<br />
+                      Nightly price = {{ rent.nightly_price }}<br />
+                      Service fees = {{ rent.service_Fees }}<br />
+                      Total = {{ rent.total_price }}<br />
+                      {{ rent.userName }} wish to rent this property from
+                      {{ rent.hostName }} for {{ rent.duration }} days.
+                    </p>
+                    <p>The rent request still not accepted by the host</p>
+                  </div>
+                  <div
+                    id="rentprop"
+                    class="imgwrapper card"
+                    style="height: 150px; width: 280px; overflow: hidden"
+                  >
+                    <img
+                      src="../../../assets/Property Images/{{
+                        rent.property_img
+                      }}"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                      style="width: 100%; height: 100%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.our-frequently-title.agents-header::after {
+    content: "";
+    background-color: #186AA5;
+    width: 150px;
+    height: 2px;
+    position: absolute;
+    top: 120%;
+    left: 44%;
+}
+
+.accordion-item {
+    background-color: #f6f9fe;
+    border: 1px solid #d4e5fc;
+}
+
+.accordion-button
+{
+    background-color:#f6f9fe ;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+
+}
+
+.accordion-button:not(.collapsed)
+{
+    color: #0810eacf;
+}

@@ -1,0 +1,105 @@
+#user-properties{
+    height: 400px;
+    overflow-y:auto;
+}
+#UserInfo{
+    overflow: hidden;
+}
+.leftside{
+    
+    text-align: center;
+    margin-left: 30px;
+}
+#userinformation br{
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 30px; /* change this to whatever height you want it */
+}
+
+#Userimg.imgwrapper{
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: green;
+    display: inline-block;
+    margin-left: 55px;
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    border: 2px solid #007bff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+}
+#Userimg img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+#propertyimg.imgwrapper{
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 150px;
+}
+#propertyimg.imgwrapper img{
+    width: 100%;
+    height: 100%;
+}
+
+br {
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 5px; /* change this to whatever height you want it */
+}
+
+#HostRequests{
+    height: 400px;
+    overflow-y:auto;
+}
+#RentRequests{
+    height: 400px;
+    overflow-y:auto;  
+}
+
+#MyPropertiesRequesrs{
+    height: 400px;
+    overflow-y:auto; 
+}
+.upload-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Hide default file input */
+  input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    position: absolute;
+    border: 2px solid #007bff;
+    border-radius: 100%;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    background-image: url("../../../assets/images/images.png");
+    bottom: 95px;
+    right: 150px;
+    background-size: contain;
+    
+}
+

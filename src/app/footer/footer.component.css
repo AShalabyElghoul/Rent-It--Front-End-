@@ -1,0 +1,143 @@
+.info {
+    position: relative;
+    background-color:  #15395b;
+    color: #ffffff;
+  }
+
+  .info a{
+    text-decoration: none;
+  }
+
+  .layout-padding-top 
+  {
+    padding-top: 90px;
+  }
+
+  .info .info-top
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+
+  .info .info-top .info-logo{
+    display: flex;
+  }
+
+.info .info-top .info-logo img 
+{
+  width: 70px;
+}
+
+.info .info-top .info-logo span
+{
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.info .info-top .social-box 
+{
+  display: flex;
+  align-items: center;
+}
+
+.info .info-top .social-box a{
+  margin: 0 12px;
+}
+
+.info .info-link-box
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.info h5
+{
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.info ul
+{
+  padding: 0;
+}
+
+.info ul li
+{
+  list-style-type: none;
+  margin: 3px 0;
+}
+
+.info ul li a
+{
+  color: #ffffff;
+}
+
+.info ul li a:hover
+{
+  color: #2289FF;
+}
+
+.info .info-form form input
+{
+  outline: none;
+  width: 100%;
+  padding: 7px 10px;
+  border: grey 2px dashed;
+  border-radius: 10px;
+
+}
+
+.info .info-form form button
+{
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #2289FF;
+  color: #ffffff;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 0;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+.info .info-form form button:hover
+{
+  background-color: transparent;
+  border-color: #2289FF;
+  color: #2289FF;
+}
+
+.layout-padding2
+{
+  padding: 45px;
+}
+
+.info .info-contact .link-box{
+  display: flex;
+  align-items: center;
+  margin: 35px 0;
+  color: #ffffff;
+}
+
+.info .info-contact .link-box .img-box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 45px;
+  min-height: 45px;
+  margin-right: 20px;
+}
+
+.info .info-contact .link-box .img-box img
+{
+  width: auto;
+  height: auto;
+  max-width: 30px;
+  max-height: 30px;
+}
